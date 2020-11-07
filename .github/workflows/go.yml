@@ -29,7 +29,7 @@ jobs:
       run: go tool dist list
       
     - name: Build
-      run: GOOS=darwin CGO_ENABLED=0 go build -o terraform-provider-nutanix
+      run: GOOS=darwin GOARCH=amd64 CGO_ENABLED=0 go build -o terraform-provider-nutanix
 
     - name: Upload Artifact
       uses: actions/upload-artifact@v2
